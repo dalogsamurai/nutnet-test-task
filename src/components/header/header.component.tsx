@@ -7,7 +7,7 @@ const Header = () => {
       <div className="header__block">
         <img src={iLogo} className="header__logo" alt="" />
       </div>
-      <h1 className="header__title">WeatherCheck</h1>
+      <h1 className="text header__title">WeatherCheck</h1>
     </header>
   );
 };
