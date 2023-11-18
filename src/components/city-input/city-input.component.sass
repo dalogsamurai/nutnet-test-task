@@ -1,0 +1,38 @@
+@import ../../styles/vars
+
+.city-input
+    margin-top: 80px
+    border-radius: 2px
+    display: flex
+    flex-direction: column
+    align-items: center
+    color: $main-text
+    &__input
+        width: 510px
+        height: 56px
+        background-color: $second-bg
+        outline: none
+        padding: 18px 20px
+        color:$white
+        border: 0px
+        &::placeholder
+            color:$main-text
+    &__empty
+        display: flex
+        align-items: flex-start
+        gap: 4px
+        margin-top: 26px
+        width: 170px
+    &__title
+        text-align: center
+        height: 38px
+    &__link
+        color: $white
+        border-bottom: 1px dashed $white
+        cursor: pointer
+    &__add-bookmarks
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 244px
+        gap: 20px
