@@ -8,15 +8,18 @@ interface Props {
 const SearchModal = ({ items }: Props) => {
 	return (
 		// TODO add link and layout
-		<div className="search-modal">
-			{items.map((item) => (
+		<section className="search-modal">
+			{/* @ts-ignore */}
+			{items.slice(0, 3).map((item) => (
 				// <Link to={`${getIdFromUrl(item.url)}`}>
-				<div className="search-modal__item">
-					<div className="search-modal__name">{item.name}</div>
-				</div>
+				<nav className="search-modal__item">
+					<a className="text search-modal__name" href={`/${item.name}`}>
+						{item.name}
+					</a>
+				</nav>
 				// </Link>
 			))}
-		</div>
+		</section>
 	);
 };
 
