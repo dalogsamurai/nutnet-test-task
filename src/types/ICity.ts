@@ -1,4 +1,4 @@
-// TODO
 export interface ICity {
-	title: string;
+  name: string;
+  id: number;
 }
