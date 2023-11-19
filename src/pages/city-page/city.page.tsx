@@ -2,23 +2,34 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { searchByCity } from "../../api/requests";
 import { IWeather } from "../../types/IWeather";
+import Navigation from "../../components/navigation/navigation.component";
+import "./city.page.sass";
 
 const CityPage = () => {
-  const { slug } = useParams();
-  const [cityData, setCityData] = useState<IWeather>();
+	const { slug } = useParams();
+	const [weatherData, setWeatherData] = useState<IWeather>();
 
-  const getData = async () => {
-    if (slug) {
-      const searchByCityRes = await searchByCity(slug);
-      console.log(searchByCityRes);
-    }
-  };
+	const getWeatherData = async () => {
+		if (slug) {
+			const searchByCityRes = await searchByCity(slug);
 
-  useEffect(() => {
-    getData();
-  }, []);
+			if (searchByCityRes.cod === 200) {
+				setWeatherData(searchByCityRes);
+			}
+			console.log(searchByCityRes);
+		}
+	};
 
-  return <main className="city-page">{slug}</main>;
+	useEffect(() => {
+		getWeatherData();
+	}, []);
+
+	return (
+		<main className="city-page">
+			<Navigation />
+			{slug}
+		</main>
+	);
 };
 
 export default CityPage;
