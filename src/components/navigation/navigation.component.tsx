@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import iArrowLeft from "../../assets/arrow-left.svg";
 import iBookmark from "../../assets/bookmark.svg";
+import { addNewCity } from "../../utils/localStorageActions";
 import "./navigation.component.sass";
 
 const Navigation = () => {
@@ -15,8 +16,13 @@ const Navigation = () => {
         </section>
       </Link>
       <section className="navigation__button">
-        {/* TODO onClick */}
-        <img src={iBookmark} className="navigation__img" alt="" />
+        {/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+        <img
+          src={iBookmark}
+          onClick={() => addNewCity(slug!)}
+          className="navigation__img"
+          alt=""
+        />
       </section>
     </nav>
   );

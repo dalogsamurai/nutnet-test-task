@@ -1,10 +1,26 @@
-import { ICity } from "../../types/ICity";
+import { useEffect, useState } from "react";
+import { getCitiesFromLS } from "../../utils/localStorageActions";
+import CityCard from "../city-card/city-card.component";
 import "./city-list.component.sass";
 
 const CityList = () => {
-	const cityList: ICity[] = [];
+  const [citiesList, setCitiesList] = useState<string[]>();
 
-	return <section className="block-list" />;
+  useEffect(() => {
+    const citiesListFromLS = getCitiesFromLS();
+
+    if (citiesListFromLS) {
+      setCitiesList(citiesListFromLS);
+    }
+  });
+
+  return (
+    <section className="city-list">
+      {citiesList?.map((city) => (
+        <CityCard slug={city} />
+      ))}
+    </section>
+  );
 };
 
 export default CityList;
