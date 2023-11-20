@@ -7,10 +7,10 @@ const Main = () => {
 	return (
 		<>
 			<Header />
-			<main className="main">
+			<section className="main">
 				<CityInput />
 				<CityList />
-			</main>
+			</section>
 		</>
 	);
 };

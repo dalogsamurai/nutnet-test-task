@@ -53,7 +53,7 @@ const CityInput = () => {
 
 			{searchRes && isModalOpen && <SearchModal items={searchRes} />}
 
-			{!cityList && (
+			{(!cityList || cityList.length < 1) && (
 				<>
 					<section className="city-input__empty">
 						<img src={iArrow} alt="" />
