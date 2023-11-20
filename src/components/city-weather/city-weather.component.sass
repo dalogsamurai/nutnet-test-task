@@ -6,6 +6,8 @@
     display: flex
     flex-direction: column
     align-items: center
+    animation-name: appear
+    animation-duration: .7s
     &__main
         display: flex
         flex-direction: column
@@ -48,3 +50,10 @@
     &__sunset
         color: $main-text
         line-height: 17.71px
+
+@keyframes appear
+    from
+        transform: translateY(-150px)
+
+    to
+        transform: translateY(0)

@@ -8,6 +8,7 @@
     &__text
         color: $main-text
     &__button
+        transition-duration: .3s
         display: flex
         align-items: center
         gap: 12px
@@ -15,3 +16,11 @@
     &__img
         width: 24px
         height: 24px
+
+.navigation__button:hover .navigation__text 
+    color:$white
+    transition-duration: .3s
+
+.navigation__button:hover .navigation__img *
+    fill:$white
+    transition-duration: .3s
