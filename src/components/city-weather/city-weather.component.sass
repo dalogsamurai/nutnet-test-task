@@ -26,7 +26,7 @@
         display: flex
         flex-direction: column
         align-items: center
-        gap:32px
+        gap: 32px
     &__pressure
         display: flex
         align-items: center
@@ -57,3 +57,29 @@
 
     to
         transform: translateY(0)
+
+@media (max-width: $mobile)
+    .city-weather
+        &__title
+            gap: 14px
+        &__name
+            font-size: 24px
+            line-height: 26.57px
+        &__description
+            font-size: 14px
+            line-height: 15.5px
+        &__temp
+            flex-direction: column
+            align-items: center
+            margin-bottom: 0
+        &__value
+            font-size: 120px
+            line-height: 132.84px
+        &__pressure
+            font-size: 14px
+            line-height: 16.71px
+        &__sunset
+            font-size: 14px
+            line-height: 15.5px
+        &__bottom
+            gap: 40px

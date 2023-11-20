@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import "./city-card.component.sass";
 import { IWeather } from "../../types/IWeather";
 import { IFormatData } from "../../types/IFormatData";
 import { searchByCity } from "../../api/requests";
 import { formatData } from "../../utils/formatData";
 import WeatherImg from "../weather-img/weather-img.component";
 import { Link } from "react-router-dom";
+import "./city-card.component.sass";
 
 interface Props {
 	slug: string;

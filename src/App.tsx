@@ -20,12 +20,7 @@ function App() {
 
 	const page = useRoutes(routes);
 
-	return (
-		<div className="App">
-			<Header />
-			{page}
-		</div>
-	);
+	return <div className="App">{page}</div>;
 }
 
 export default App;
