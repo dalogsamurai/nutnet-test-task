@@ -11,10 +11,12 @@
     top: 56px
     &:visited
         color: #000000
-    &__name
     &__item
         cursor: pointer
         padding: 20px
         &:hover
             background-color: $modal-bg
         
+@media (max-width: $mobile)
+    .search-modal
+        width: calc(100% + 40px)

@@ -9,9 +9,9 @@ const Header = () => {
 
 	return slug && isMobileWidth ? null : (
 		<header className="header">
-			<div className="header__block">
+			<section className="header__block">
 				<img src={iLogo} className="header__logo" alt="" />
-			</div>
+			</section>
 			<h1 className="text header__title">WeatherCheck</h1>
 		</header>
 	);

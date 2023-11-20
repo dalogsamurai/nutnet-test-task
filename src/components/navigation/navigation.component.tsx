@@ -15,12 +15,12 @@ const Navigation = () => {
 	const [isBookmarkActive, setBookmarkActive] = useState(isCityAdded(slug!));
 
 	return (
-		<nav className="navigation">
+		<aside className="navigation">
 			<Link to="/">
-				<section className="navigation__button">
+				<nav className="navigation__button">
 					<IArrowLeft className="navigation__img" />
 					<p className="navigation__text">Назад</p>
-				</section>
+				</nav>
 			</Link>
 			<section className="navigation__button">
 				{isBookmarkActive && (
@@ -42,7 +42,7 @@ const Navigation = () => {
 					/>
 				)}
 			</section>
-		</nav>
+		</aside>
 	);
 };
 

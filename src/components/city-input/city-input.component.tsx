@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { IWeather } from "../../types/IWeather";
 import iArrow from "../../assets/arrow.svg";
 import iBookmark from "../../assets/bookmark.svg";
 import { searchByCity } from "../../api/requests";
