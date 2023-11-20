@@ -24,7 +24,9 @@ export const isCityAdded = (slug: string) => {
 	const cities = localStorage.getItem(LS_CITIES);
 	const citiesList = JSON.parse(cities!);
 
-	return citiesList.includes(slug);
+	if (citiesList) {
+		return citiesList.includes(slug);
+	}
 };
 
 export const removeCity = (slug: string) => {
