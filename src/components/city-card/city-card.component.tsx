@@ -5,6 +5,7 @@ import { IFormatData } from "../../types/IFormatData";
 import { searchByCity } from "../../api/requests";
 import { formatData } from "../../utils/formatData";
 import WeatherImg from "../weather-img/weather-img.component";
+import { Link } from "react-router-dom";
 
 interface Props {
 	slug: string;
@@ -35,11 +36,16 @@ const CityCard = ({ slug }: Props) => {
 	}, [weatherData]);
 
 	return (
-		<section className="city-card">
-			<p className="city-card__name">{weatherData?.name}</p>
-			<p className="city-card__temp">{formatedData?.temp}</p>
-			<WeatherImg isSmall={true} weatherType={weatherData?.weather[0].main!} />
-		</section>
+		<Link to={`/${slug}`}>
+			<section className="city-card">
+				<p className="city-card__name">{weatherData?.name}</p>
+				<p className="city-card__temp">{formatedData?.temp}</p>
+				<WeatherImg
+					isSmall={true}
+					weatherType={weatherData?.weather[0].main!}
+				/>
+			</section>
+		</Link>
 	);
 };
 
