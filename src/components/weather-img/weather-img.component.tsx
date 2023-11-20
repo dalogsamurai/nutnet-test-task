@@ -8,58 +8,100 @@ import iSnow from "../../assets/snow.svg";
 import iSquall from "../../assets/squall.svg";
 import iThunderstorm from "../../assets/thunderstorm.svg";
 import iTornado from "../../assets/tornado.svg";
+import cn from "classnames";
 import "./weather-img.component.sass";
 
 interface Props {
   weatherType: string;
+  isSmall?: boolean;
 }
 
-const WeatherImg = ({ weatherType }: Props) => {
+const WeatherImg = ({ weatherType, isSmall = false }: Props) => {
   return (
     <>
       {weatherType === "Clear" && (
-        <img src={iClear} className="weather-img" alt="" />
+        <img
+          src={iClear}
+          className={cn("weather-img", { _small: isSmall })}
+          alt=""
+        />
       )}
 
       {weatherType === "Clouds" && (
-        <img src={iClouds} className="weather-img" alt="" />
+        <img
+          src={iClouds}
+          className={cn("weather-img", { _small: isSmall })}
+          alt=""
+        />
       )}
 
       {weatherType === "Drizzle" && (
-        <img src={iDrizzle} className="weather-img" alt="" />
+        <img
+          src={iDrizzle}
+          className={cn("weather-img", { _small: isSmall })}
+          alt=""
+        />
       )}
 
       {(weatherType === "Dust" ||
         weatherType === "Ash" ||
         weatherType === "Sand") && (
-        <img src={iDustSandAsh} className="weather-img" alt="" />
+        <img
+          src={iDustSandAsh}
+          className={cn("weather-img", { _small: isSmall })}
+          alt=""
+        />
       )}
 
       {(weatherType === "Mist" ||
         weatherType === "Smoke" ||
         weatherType === "Fog" ||
         weatherType === "Haze") && (
-        <img src={iMistSmokeHazeFog} className="weather-img" alt="" />
+        <img
+          src={iMistSmokeHazeFog}
+          className={cn("weather-img", { _small: isSmall })}
+          alt=""
+        />
       )}
 
       {weatherType === "Rain" && (
-        <img src={iRain} className="weather-img" alt="" />
+        <img
+          src={iRain}
+          className={cn("weather-img", { _small: isSmall })}
+          alt=""
+        />
       )}
 
       {weatherType === "Snow" && (
-        <img src={iSnow} className="weather-img" alt="" />
+        <img
+          src={iSnow}
+          className={cn("weather-img", { _small: isSmall })}
+          alt=""
+        />
       )}
 
       {weatherType === "Squall" && (
-        <img src={iSquall} className="weather-img" alt="" />
+        <img
+          src={iSquall}
+          className={cn("weather-img", { _small: isSmall })}
+          alt=""
+        />
       )}
 
       {weatherType === "Thunderstorm" && (
-        <img src={iThunderstorm} className="weather-img" alt="" />
+        <img
+          src={iThunderstorm}
+          className={cn("weather-img", { _small: isSmall })}
+          alt=""
+        />
       )}
 
       {weatherType === "Tornado" && (
-        <img src={iTornado} className="weather-img" alt="" />
+        <img
+          src={iTornado}
+          className={cn("weather-img", { _small: isSmall })}
+          alt=""
+        />
       )}
     </>
   );
