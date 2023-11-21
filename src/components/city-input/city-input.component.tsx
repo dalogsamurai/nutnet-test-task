@@ -51,7 +51,9 @@ const CityInput = () => {
 				onInput={(e) => setSearchStr(e.target.value)}
 			/>
 
-			{searchRes && isModalOpen && <SearchModal items={searchRes} />}
+			{searchRes && isModalOpen && (
+				<SearchModal items={searchRes} inputValue={searchStr.length} />
+			)}
 
 			{(!cityList || cityList.length < 1) && (
 				<>

@@ -4,7 +4,6 @@
     position: absolute
     z-index: 1
     background-color: $second-bg
-    color: $white
     display: flex
     flex-direction: column
     width: 100%
@@ -16,6 +15,10 @@
         padding: 20px
         &:hover
             background-color: $modal-bg
+    &__name
+        color: $white
+        &_unactive
+            color: $main-text
         
 @media (max-width: $mobile)
     .search-modal
