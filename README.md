@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Started with Create React App
 
-Using OpenWeatherAPI.
+Using <a href="https://openweathermap.org/api">OpenWeatherAPI</a>.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
