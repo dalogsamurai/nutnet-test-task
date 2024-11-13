@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import iArrow from "../../assets/arrow.svg";
 import iBookmark from "../../assets/bookmark.svg";
-import { searchByCity } from "../../api/requests";
+import { getAllCitiesAPI, searchByCityAPI } from "../../api/requests";
 import { getCityFromDb } from "../../utils/getCityFromDb";
 import SearchModal from "../search-modal/search-modal.component";
 import { getRandomCityFromDb } from "../../utils/getRandomCityFromDb";
@@ -16,10 +16,25 @@ const CityInput = () => {
 	const [randomCity, setRandomCity] = useState("");
 
 	const search = async () => {
-		const searchByCityRes = await searchByCity(searchStr);
+		const searchByCity = await searchByCityAPI(searchStr);
 		const getCityFromDbRes = getCityFromDb(searchStr);
+		const getAllCities = await getAllCitiesAPI();
 
-		if (searchByCityRes.cod === 200) {
+		const getCountry = getAllCities.data.find((country: any) =>
+			country.cities.find(
+				(city: any) => city.toLowerCase() === searchStr.toLowerCase(),
+			),
+		);
+
+		let getCity;
+
+		if (getCountry) {
+			getCity = getCountry.cities.find(
+				(city: string) => city.toLowerCase() === searchStr.toLowerCase(),
+			);
+		}
+
+		if (searchByCity.cod === 200) {
 			// @ts-ignore
 			setSearchRes([...getCityFromDbRes.splice(0.3), searchByCityRes]);
 		} else {

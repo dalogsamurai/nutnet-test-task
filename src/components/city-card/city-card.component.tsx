@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { IWeather } from "../../types/IWeather";
 import { IFormatData } from "../../types/IFormatData";
-import { searchByCity } from "../../api/requests";
+import { searchByCityAPI } from "../../api/requests";
 import { formatData } from "../../utils/formatData";
 import WeatherImg from "../weather-img/weather-img.component";
 import { Link } from "react-router-dom";
@@ -17,7 +17,7 @@ const CityCard = ({ slug }: Props) => {
 
 	const getWeatherData = async () => {
 		if (slug) {
-			const searchByCityRes = await searchByCity(slug);
+			const searchByCityRes = await searchByCityAPI(slug);
 
 			if (searchByCityRes.cod === 200) {
 				setWeatherData(searchByCityRes);

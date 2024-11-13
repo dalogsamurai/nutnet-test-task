@@ -35,7 +35,6 @@ export const removeCity = (slug: string) => {
 
 	localStorage.setItem(
 		LS_CITIES,
-		// @ts-ignore
-		JSON.stringify([...citiesList.filter((city) => city !== slug)]),
+		JSON.stringify([...citiesList.filter((city: string) => city !== slug)]),
 	);
 };

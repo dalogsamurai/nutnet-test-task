@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IWeather } from "../../types/IWeather";
-import { searchByCity } from "../../api/requests";
+import { searchByCityAPI } from "../../api/requests";
 import { IFormatData } from "../../types/IFormatData";
 import { formatData } from "../../utils/formatData";
 import iBarometer from "../../assets/barometer.svg";
@@ -15,7 +15,7 @@ const CityWeather = () => {
 
 	const getWeatherData = async () => {
 		if (slug) {
-			const searchByCityRes = await searchByCity(slug);
+			const searchByCityRes = await searchByCityAPI(slug);
 
 			if (searchByCityRes.cod === 200) {
 				setWeatherData(searchByCityRes);

@@ -12,7 +12,7 @@ const CityList = () => {
 		if (citiesListFromLS) {
 			setCitiesList(citiesListFromLS);
 		}
-	});
+	}, []);
 
 	return (
 		<section className="city-list">
