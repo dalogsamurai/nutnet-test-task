@@ -7,6 +7,7 @@ const Main = () => {
 	return (
 		<>
 			<Header />
+
 			<section className="main">
 				<CityInput />
 				<CityList />

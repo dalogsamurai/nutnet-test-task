@@ -22,6 +22,7 @@ const Navigation = () => {
 					<p className="navigation__text">Назад</p>
 				</nav>
 			</Link>
+
 			<section className="navigation__button">
 				{isBookmarkActive && (
 					<IBookmarkActive
@@ -32,6 +33,7 @@ const Navigation = () => {
 						}}
 					/>
 				)}
+
 				{!isBookmarkActive && (
 					<IBookmark
 						className="navigation__img"
